@@ -1,0 +1,10 @@
+Id	名字	描述	材质	类型	自动下落	消除数量	攻击类型	具体类型	生命值
+1	黄砖块	道具物品	BlockYellow.png	1.阻挡物	1	0	0.null	1.EMT_YELLOW	1
+2	紫砖块	道具物品	BlockPurple.png	1.阻挡物	1	0	0.null	4.EMT_PURPLE	1
+3	蓝砖块	道具物品	BlockBlue.png	1.阻挡物	1	0	0.null	5.EMT_BLUE	1
+4	红砖块	道具物品	BlockRed.png	1.阻挡物	1	0	0.null	2.EMT_RED	1
+5	绿砖块	道具物品	BlockGreen.png	1.阻挡物	1	0	0.null	3.EMT_GREEN	1
+6	石头	道具物品	BlockStone.png	1.阻挡物	0	0	0.null	0.EMT_NONE	3
+7	红钻石	道具	PropRed.png	2.消除道具	1	2	1.RANGE	0.EMT_NONE	0
+8	蓝钻石	道具	PropBlue.png	2.消除道具	1	4	2.LINEVERTICAL	0.EMT_NONE	0
+9	紫钻石	道具	PropGreen.png	2.消除道具	1	4	3.DELIVERY	0.EMT_NONE	0

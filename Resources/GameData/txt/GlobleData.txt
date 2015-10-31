@@ -1,0 +1,2 @@
+BulletNum	500
+TotleNum	5

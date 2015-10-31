@@ -1,0 +1,1 @@
+2015-10-26 22:24:8   e:\program\cocos2d-x-3.5\cocos2d-x-3.5\projects\earthexplore\classes\ui\startscene\startscene.cpp StartScene::init 33 x>0
