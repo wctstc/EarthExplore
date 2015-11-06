@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="win32">
+      <UniqueIdentifier>{84a8ebd7-7cf0-47f6-b75e-d441df67da40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{715254bc-d70b-4ec5-bf29-467dd3ace079}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{bb6c862e-70e9-49d9-81b7-3829a6f50471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Logic">
+      <UniqueIdentifier>{7934c7ef-38a8-484b-984a-3d6a122a5a87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\UI">
+      <UniqueIdentifier>{ab0254bb-0d57-45f0-ab25-9babf7602316}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Logic\CommonHeader">
+      <UniqueIdentifier>{0469d190-99f6-4070-a158-fb5e88cae6a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Logic\GlobalSchedule">
+      <UniqueIdentifier>{6332f7b1-d989-44d2-91b6-8557ea462ee7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Logic\Lua">
+      <UniqueIdentifier>{b7c0bb82-6660-4e4e-9419-f4cba4c9f917}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Logic\Main">
+      <UniqueIdentifier>{f99999a9-40e7-40ae-a627-7552dbe4111d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Logic\Player">
+      <UniqueIdentifier>{e47cb361-e4a2-4655-a2bf-ceef7921402a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Logic\System">
+      <UniqueIdentifier>{71030764-a1ea-462a-9774-c86a7088b1db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Logic\Lua\include">
+      <UniqueIdentifier>{f9065359-2c68-4345-8ad3-fe5461ff82a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Logic\Lua\src">
+      <UniqueIdentifier>{5010df33-a2ce-40a2-b4e9-ddb815fb616b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\UI\Components">
+      <UniqueIdentifier>{0d6a3d97-73cc-415d-9f21-2748dcfb5f68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\UI\MainScene">
+      <UniqueIdentifier>{a8a47591-c99d-428c-b62f-32272a154a04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\UI\StartScene">
+      <UniqueIdentifier>{1cfe9827-a59d-41e2-a676-c2cba4cb0823}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core">
+      <UniqueIdentifier>{70d3ca23-98fa-4611-b900-efd335bb444e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Logic\Animation">
+      <UniqueIdentifier>{0ebc5831-3c80-433a-808c-569cefaedc8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\UI\ShopScene">
+      <UniqueIdentifier>{724579df-503e-493a-a8cf-92c560eef4c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\UI\Animations">
+      <UniqueIdentifier>{f48afd3f-5245-4c7e-b82c-d37a7b8533e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Logic\Log">
+      <UniqueIdentifier>{7df6ed62-b2d6-4d51-82f1-a96042c3dde5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\UI\Animations\Reward">
+      <UniqueIdentifier>{990b8ade-063b-4ec5-9b50-da19e1230443}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Pay">
+      <UniqueIdentifier>{a0f28875-10c1-4e10-8a08-57cfc065f578}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\AppDelegate.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\GlobalSchedule\GlobalSchedule.cpp">
+      <Filter>src\Logic\GlobalSchedule</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lapi.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lauxlib.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lbaselib.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lcode.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\ldblib.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\ldebug.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\ldo.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\ldump.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lfunc.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lgc.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\linit.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\liolib.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\llex.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lmathlib.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lmem.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\loadlib.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lobject.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lopcodes.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\loslib.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lparser.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lstate.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lstring.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lstrlib.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\ltable.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\ltablib.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\ltm.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\luac.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lundump.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lvm.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\lzio.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Lua\src\print.c">
+      <Filter>src\Logic\Lua\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Main\DataManager.cpp">
+      <Filter>src\Logic\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Main\GameManager.cpp">
+      <Filter>src\Logic\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Main\GeneralKit.cpp">
+      <Filter>src\Logic\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Main\LuaObject.cpp">
+      <Filter>src\Logic\Main</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\System\GameSystem.cpp">
+      <Filter>src\Logic\System</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Reward\Reward.cpp">
+      <Filter>src\UI\Animations\Reward</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\Player\Player.cpp">
+      <Filter>src\Logic\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UI\Components\Component.cpp">
+      <Filter>src\UI\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UI\MainScene\MainScene.cpp">
+      <Filter>src\UI\MainScene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UI\StartScene\StartScene.cpp">
+      <Filter>src\UI\StartScene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Logic\GlobalSchedule\IntervalSchedule.cpp">
+      <Filter>src\Logic\GlobalSchedule</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UI\Animation\Animation.cpp">
+      <Filter>src\UI\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\UI\ShopScene\ShopScene.cpp">
+      <Filter>src\UI\ShopScene</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Pay\Log.cpp">
+      <Filter>src\Pay</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Pay\PayClient.cpp">
+      <Filter>src\Pay</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="main.h">
+      <Filter>win32</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\AppDelegate.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\CommonHeader\ac_define.h">
+      <Filter>src\Logic\CommonHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\GlobalSchedule\GlobalSchedule.h">
+      <Filter>src\Logic\GlobalSchedule</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lapi.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lauxlib.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lcode.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\ldebug.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\ldo.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lfunc.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lgc.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\llex.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\llimits.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lmem.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lobject.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lopcodes.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lparser.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lstate.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lstring.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\ltable.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\ltm.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lua.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\luaconf.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lualib.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lundump.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lvm.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Lua\include\lzio.h">
+      <Filter>src\Logic\Lua\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Main\DataManager.h">
+      <Filter>src\Logic\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Main\GameManager.h">
+      <Filter>src\Logic\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Main\GeneralKit.h">
+      <Filter>src\Logic\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Main\logicHeader.h">
+      <Filter>src\Logic\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Main\LuaObject.h">
+      <Filter>src\Logic\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\System\GameSystem.h">
+      <Filter>src\Logic\System</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Reward\Reward.h">
+      <Filter>src\UI\Animations\Reward</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\Player\Player.h">
+      <Filter>src\Logic\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\GUIHeader.h">
+      <Filter>src\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\Components\Component.h">
+      <Filter>src\UI\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\MainScene\MainScene.h">
+      <Filter>src\UI\MainScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\StartScene\StartScene.h">
+      <Filter>src\UI\StartScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\GlobalSchedule\IntervalSchedule.h">
+      <Filter>src\Logic\GlobalSchedule</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Logic\CommonHeader\value_define.h">
+      <Filter>src\Logic\CommonHeader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Core\template.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\Animation\Animation.h">
+      <Filter>src\UI\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\UI\ShopScene\ShopScene.h">
+      <Filter>src\UI\ShopScene</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Pay\AndroidPlatform.h">
+      <Filter>src\Pay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Pay\Log.h">
+      <Filter>src\Pay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Pay\PayClient.h">
+      <Filter>src\Pay</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Pay\Platform.h">
+      <Filter>src\Pay</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="game.rc">
+      <Filter>resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
