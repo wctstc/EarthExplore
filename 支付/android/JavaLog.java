@@ -8,7 +8,7 @@ public class JavaLog {
 	public static void Log(String msg){     
 		FileOutputStream out = null;
 		try {
-		    out = new FileOutputStream(new File("/mnt/sdcard/CocoSS/pay_server.log"), true );
+		    out = new FileOutputStream(new File("/mnt/sdcard/EarthExplore/pay_server.log"), true );
 		    out.write((msg+"\n").getBytes());
 		    out.close();
 		}

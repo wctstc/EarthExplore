@@ -1,5 +1,6 @@
 ﻿#include "logicHeader.h"
 #include "GUIHeader.h"
+#include "PayClient.h"
 
 USING_NS_CC;
 using namespace cocos2d::ui;
@@ -103,14 +104,25 @@ void ShopScene::selectedItemEvent( Ref* ref, ListViewEventType EventType)
   case LISTVIEW_ONSELECTEDITEM_END:
     {
       int Index = _Listview->getCurSelectedIndex();
-      Layout* layout = static_cast<Layout*>(_Listview->getItem(Index));
-      ImageView* BkView = static_cast<ImageView*>(layout->getChildByTag(0));
+	  Layout* layout = static_cast<Layout*>(_Listview->getItem(Index));
+	  ImageView* BkView = static_cast<ImageView*>(layout->getChildByTag(0));
+	  Button* BtnBuy = static_cast<Button*>(layout->getChildByTag(2));
       if (BkView == ref)
       {
         ImageView* Hilight = static_cast<ImageView*>(layout->getChildByTag(1));
         HideOtherImage(Index);
         Hilight->setVisible(true);
       }
+	  else if( BtnBuy == ref )
+	  {
+		  m_price = DataMgr->Shop.GetShopItemData()(Index).money;
+
+		  DataMgr->GetItemProperty( Index );
+		  m_index = Index;
+
+		  PayClient::GetInstance()->Pay( m_price, "道具","道具充值" );
+		  schedule(schedule_selector(ShopScene::Check), 1.0f);
+	  }
     }
     break;
   default:
@@ -138,4 +150,32 @@ void ShopScene::HideOtherImage(int Index)
     ImageView* Hilight = static_cast<ImageView*>(layout->getChildByTag(1));
     Hilight->setVisible(false);
   }
+}
+
+void ShopScene::Check(float dt)
+{
+	string result;
+	PayClient::GetInstance()->Check(result);
+	if( !result.empty() )
+	{
+		Size size = getContentSize();
+		string content;
+		if( result == "succeed" )
+		{
+			const TArray<ShopData>& ShopItems = DataMgr->Shop.GetShopItemData();
+
+			//ShopItems(m_index)
+			content = "充值成功";
+		}
+		else
+		{
+			content = "充值失败";
+		}
+
+		CCLabelTTF* _label = CCLabelTTF::create( content.c_str(),"", 30);  
+		_label->setPosition( size.width/2, size.height/2 );   
+		addChild(_label);
+		_label->runAction(CCSequence::create(CCFadeOut::create(1),CCRemoveSelf::create(true),NULL)); 
+		unschedule(schedule_selector(ShopScene::Check));
+	}
 }

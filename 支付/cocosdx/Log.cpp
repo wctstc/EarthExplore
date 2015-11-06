@@ -1,4 +1,5 @@
 ﻿#include "Log.h"
+#include "CCFileUtils.h"
 
 #include <fstream>
 #include <time.h>
@@ -15,19 +16,21 @@
 #endif
 
 
-static const string DIR = "/mnt/sdcard/CocoSS/";
+static const string DIR = "/mnt/sdcard/EarthExplore/";
 
-CLog * CLog::m_instance = new CLog("CocoSS.log");
+CLog * CLog::m_instance = NULL;
 
 
 CLog::CLog( string file_name )
 {
-	int rtn = MKDIR(DIR.c_str());
+	cocos2d::FileUtils::getInstance()->createDirectory(DIR);
 	m_file_name = DIR + file_name;
 }
 	
 CLog * CLog::GetInstance()
 {
+	if( m_instance == NULL )
+		m_instance = new CLog("EarthExplore.log");
 	return m_instance;
 }
 

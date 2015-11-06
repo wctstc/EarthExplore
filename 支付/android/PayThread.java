@@ -18,6 +18,7 @@ import com.bmob.pay.tool.PayListener;
 
 public class PayThread extends Thread implements PayListener,OrderQueryListener{
 	private Activity m_context;
+	private BmobPay m_bmob_pay;
 	private BufferedReader m_buffered_reader;
 	private BufferedWriter m_buffered_writer;
 	
@@ -25,6 +26,7 @@ public class PayThread extends Thread implements PayListener,OrderQueryListener{
 
 		JavaLog.Log("Create PayThread");
 		m_context = context;
+		m_bmob_pay = new BmobPay( m_context );
 	}
 	public void run(){
 		JavaLog.Log("Init Pay");
@@ -33,23 +35,25 @@ public class PayThread extends Thread implements PayListener,OrderQueryListener{
 	}
 	
 	private void CreateServerSocket(){
-		ServerSocket ss;
+		ServerSocket ss = null;
+		Socket s;
 		try {
 			ss = new ServerSocket(10812);
 
 			JavaLog.Log("Create ServerSocket Succeed");
-			boolean bRunning = true;
-			while (bRunning) {
-				JavaLog.Log("Wait Connect");
-				Socket s = ss.accept();
-				JavaLog.Log("Connect Succeed");
+			//boolean bRunning = true;
+			
+			JavaLog.Log("Wait Connect");
+			s = ss.accept();
+			JavaLog.Log("Connect Succeed");
 
-				m_buffered_reader = new BufferedReader( new InputStreamReader( s.getInputStream() ));
-				m_buffered_writer = new BufferedWriter( new OutputStreamWriter( s.getOutputStream() ));
+			m_buffered_reader = new BufferedReader( new InputStreamReader( s.getInputStream() ));
+			m_buffered_writer = new BufferedWriter( new OutputStreamWriter( s.getOutputStream() ));
 
-				String function;
-				String args = new String("");
+			String function;
+			String args = new String("");
 
+			while (true) {
 				JavaLog.Log("Wait ReadLine");
 				String msg = m_buffered_reader.readLine();
 				JavaLog.Log("ReadLine:"+msg);
@@ -73,12 +77,22 @@ public class PayThread extends Thread implements PayListener,OrderQueryListener{
 					query( args );
 				}
 			}
-			ss.close();
 		} catch (IOException e) {
 			JavaLog.Log("CreateServerSocket IOException");
 			StackTraceElement[] st =  e.getStackTrace();
 			for( int i = 0; i < st.length; i++ ){
 				JavaLog.Log(st[i].toString());
+			}
+		}
+		finally
+		{
+			try {
+				if( ss != null )
+				{
+					ss.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
 		}
 		
@@ -94,11 +108,49 @@ public class PayThread extends Thread implements PayListener,OrderQueryListener{
 		JavaLog.Log("pay way:"+way+",price:"+price+",name:"+name);
 		if( way.equals( "zfb")){
 			JavaLog.Log("zfb.invoke price:"+Double.parseDouble(price)+",name:"+name);
-			new BmobPay( m_context ).pay( Double.parseDouble(price),name,this );
+			m_bmob_pay.pay( Double.parseDouble(price),name,new PayListener()
+			{
+				//支付回调
+				@Override
+				public void orderId(String orderID) {
+					JavaLog.Log("orderID:"+orderID);
+				}
+				@Override
+				public void succeed() {
+					JavaLog.Log("Pay Succeed");
+					try { 
+						m_buffered_writer.write("succeed succeed");
+						m_buffered_writer.flush();
+					}
+					catch (IOException e) {
+						JavaLog.Log("orderId IOException");
+					}
+				}
+				//失败回调
+				@Override
+				public void fail(int fail_code, String fail_msg ) {
+					if( fail_code == 10777 ){
+						BmobPay.ForceFree();
+						JavaLog.Log("Force Free");
+					}
+					JavaLog.Log("Pay Fail fail_code:"+fail_code + ",fail_msg:"+fail_msg);
+					try { 
+						m_buffered_writer.write("PayFail fail_code:"+fail_code + ",fail_msg:"+fail_msg);
+						m_buffered_writer.flush();
+					}
+					catch (IOException e) {
+						JavaLog.Log("orderId IOException");
+					}
+				}
+				@Override
+				public void unknow() {
+					JavaLog.Log("Pay Unknow");
+				}
+			} );
 		}
 		else if( way.equals("wx")){
 			JavaLog.Log("wx.invoke price:"+Double.parseDouble(price)+",name:"+name);
-			new BmobPay( m_context ).payByWX( Double.parseDouble(price),name,this );
+			m_bmob_pay.payByWX( Double.parseDouble(price),name,this );
 		}
 	}
 	private void query( String args ){
@@ -106,7 +158,7 @@ public class PayThread extends Thread implements PayListener,OrderQueryListener{
 		String orderID = stz.nextToken();
 
 		JavaLog.Log("query orderID:"+orderID );
-		new BmobPay(m_context).query(orderID,this );
+		m_bmob_pay.query(orderID,this );
 	}
 	
 	
@@ -172,7 +224,7 @@ public class PayThread extends Thread implements PayListener,OrderQueryListener{
 			JavaLog.Log("Pay Fail fail_code is "+fail_code + ", Force Free");
 		}
 
-		JavaLog.Log("Pay Fail fail_code:"+fail_code + ",fail_msg:"+fail_msg);
+		JavaLog.Log("Payfail_code:"+fail_code + ",fail_msg:"+fail_msg);
 	}
 	
 }

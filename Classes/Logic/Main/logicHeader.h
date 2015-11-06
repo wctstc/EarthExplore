@@ -9,7 +9,6 @@
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
 
-#include "../Log/Log.h"
 #include "Core/template.h"
 #include "../CommonHeader/value_define.h"
 #include "../CommonHeader/ac_define.h"

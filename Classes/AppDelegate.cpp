@@ -1,6 +1,7 @@
 #include "AppDelegate.h"
 #include "logicHeader.h"
 #include "GUIHeader.h"
+#include "PayClient.h"
 
 USING_NS_CC;
 extern CDataManager* DataMgr;
@@ -51,6 +52,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     FileUtils::getInstance()->addSearchPath("Image");
 
     // create a scene. it's an autorelease object
+	PayClient::GetInstance()->Init();
     auto scene = StartScene::createScene();
 
     // run

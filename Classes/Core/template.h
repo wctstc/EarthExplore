@@ -45,12 +45,12 @@ public:
   }
   const T& operator()( int i ) const
   {
-    check(IsValidIndex(i));
+    //check(IsValidIndex(i));
     return ((T*)_data)[i];
   }
   T& operator()( int i )
   {
-    check(IsValidIndex(i));
+    //check(IsValidIndex(i));
     return ((T*)_data)[i];
   }
   TArray()

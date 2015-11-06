@@ -13,7 +13,8 @@ public:
 public:
 	int Init();
 
-	int Pay( double price, string thing, string description, string &orderID/*, int time = 0*/ );
+	int Pay( double price, string thing, string description );
+	int Check( string &result );
 	int Query( string orderID, bool &statu );
 
 public:
@@ -21,7 +22,7 @@ public:
 	void RecvPacket( char *rsp );
 private:
 	SOCKET m_socket;
-	CLog m_log;
+	CLog *m_log;
 
 	static PayClient *m_instance;
 };
